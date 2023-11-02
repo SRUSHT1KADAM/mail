@@ -28,7 +28,7 @@
                 "https://*/*"
             ],
             "js": [
-                "index.js"
+                "scripts/content.js"
             ]
         }
     ]
