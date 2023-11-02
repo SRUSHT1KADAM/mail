@@ -18,6 +18,9 @@ const sendMessage = (content) => {
         if (url.includes("mail.google")) {
             site = "gmail";
         }
+        else if (url.includes("outlook")) {
+            site = "outlook";
+        }
 
         chrome.tabs.sendMessage(
             activeTab,
@@ -25,10 +28,9 @@ const sendMessage = (content) => {
             (response) => {
                 if (response.status === 'failed') {
                     console.log('injection failed.');
-                }
+                } 
             }
-        );
-        //console.log(tabs[0].url);
+        ); 
     });
 };
 
@@ -45,7 +47,7 @@ const generate = async (prompt) => {
         body: JSON.stringify({
             model: 'text-davinci-003',
             prompt: prompt,
-            max_tokens: 256,
+            max_tokens: 500,
             temperature: 0.7,
         }),
     });
